@@ -1,3 +1,8 @@
 from django.db import models
+from mezzanine.pages.models import Displayable
+from mezzanine.core.models import Orderable, RichText
 
-# Create your models here.
+
+class Project(Displayable, Orderable, RichText):
+    """A project."""
+    image = models.ImageField(upload_to="projects")
