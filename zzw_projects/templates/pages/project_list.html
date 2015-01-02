@@ -1,0 +1,14 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags staticfiles %}
+
+{% block main %}
+{{ block.super }}
+
+foo
+{% editable page.projectlist.content %}
+{{ page }}
+{{ page.projectlist.content|richtext_filters|safe }}
+{% endeditable %}
+
+{% endblock %}
